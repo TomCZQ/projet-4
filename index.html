@@ -6,23 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Description de votre site web">
     <title>Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.scss">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
 
     <header>
-        <h1>Titre principal de votre site</h1>
-
+        <img src="./images/logo/ohmyfood@2x.svg">   
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Paris, Belleville</p>
+        </div>
     </header>
 
     <main>
-        <p>Contenu de votre page ici.</p>
+        <div class="headlines">
+            <h2>Réservez le menu qui vous convient</h2>
+            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+            <button>Explorer nos restaurants</button>
+        </div>
+        <div class="fonctionnement">
+            <h2>Fonctionnement</h2>
+            <div>
+                <div class="cercle">
+                    <p>1</p>
+                </div>
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <p>Choisissez un restaurant</p>
+            </div>
+            <div>
+                <div class="cercle">
+                    <p>2</p>
+                </div>
+                <i class="fa-solid fa-list-ul"></i>
+                <p>Composez votre menu</p>
+            </div>
+            <div>
+                <div class="cercle">
+                    <p>3</p>
+                </div>
+                <i class="fa-solid fa-store"></i>
+                <p>Dégustez au restaurant</p>
+            </div>
+        </div>
+        <div class="restaurants">
+            <a href="#">
+                <article class="card">
+                    <div class="nouveau">
+                        <p>Nouveau</p>
+                    </div>
+                    <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Photo d'une assiette sur une table">
+                    <div class="card-content">
+                        <div class="card-txt">
+                            <h3 class="card-title">La palette du goût</h3>
+                            <p class="card-subtitle">Ménilmontant</p>
+                        </div>
+                        <div class="card-heart">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            <a href="#">
+                <article class="card">
+                    <div class="nouveau">
+                        <p>Nouveau</p>
+                    </div>
+                    <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
+                    <div class="card-content">
+                        <div class="card-txt">
+                            <h3 class="card-title">La note enchantée</h3>
+                            <p class="card-subtitle">Charonne</p>
+                        </div>
+                        <div class="card-heart">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            <a href="#">
+                <article class="card">
+                    <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+                    <div class="card-content">
+                        <div class="card-txt">
+                            <h3 class="card-title">À la française</h3>
+                            <p class="card-subtitle">Cité Rouge</p>
+                        </div>
+                        <div class="card-heart">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            <a href="#">
+                <article class="card">
+                    <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
+                    <div class="card-content">
+                        <div class="card-txt">
+                            <h3 class="card-title">Le délice des sens</h3>
+                            <p class="card-subtitle">Folie-Méricourt</p>
+                        </div>
+                        <div class="card-heart">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </article>
+            </a>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Votre Nom / Nom de votre entreprise</p>
+        <img src="./images/logo/ohmyfood.png">
+        <div>
+            <p>Proposer un restaurant</p>
+        </div>
+        <div>
+            <p>Devenir partenaire</p>
+        </div>
+        <p>Mentions légales</p>
+        <p>Contact</p>
     </footer>
 
 </body>
