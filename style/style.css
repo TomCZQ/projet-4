@@ -98,10 +98,11 @@ header .location {
   border: solid 0px;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
   margin-bottom: 50px;
-  transition: opacity 400ms;
+  transition: all 400ms;
 }
 .headlines button:hover {
   opacity: 0.8;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
 /********************fonctionnement*******************/
@@ -118,30 +119,39 @@ header .location {
   margin-top: 40px;
   margin-bottom: 0px;
 }
-.fonctionnement p {
+.fonctionnement .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.fonctionnement .cards p {
   font-weight: 500;
   font-size: 16px;
 }
-.fonctionnement .card {
+.fonctionnement .cards .card {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-self: center;
+  margin-right: 10px;
+  padding-right: 10px;
   width: 100%;
+  z-index: 0;
 }
-.fonctionnement .card-text {
+.fonctionnement .cards .card-text {
   box-sizing: content-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
+  border-radius: 10px;
   width: 95%;
   padding-left: 30px;
   background-color: #f6f6f6;
 }
-.fonctionnement .cercle {
+.fonctionnement .cards .cercle {
   position: relative;
   left: 10px;
   display: flex;
@@ -154,10 +164,14 @@ header .location {
   border: solid 0px #D9D9D9;
   text-align: center;
   line-height: 40px;
+  padding-left: -20px;
 }
-.fonctionnement .cercle p {
+.fonctionnement .cards .cercle p {
   color: white;
   font-size: 14.18px;
+}
+.fonctionnement .card-heart {
+  z-index: 1;
 }
 .fonctionnement .fa-list-ul {
   color: #7e7e7e;
@@ -205,7 +219,7 @@ header .location {
 .restaurants .card .image {
   width: 100%;
   height: 100%;
-  max-height: 200px;
+  max-height: 160px;
 }
 .restaurants .card img {
   -o-object-fit: cover;
@@ -269,10 +283,9 @@ header .location {
   font-size: 17px;
   font-weight: 300;
 }
-.restaurants .card .card-content .fas .fa-heart {
-  width: 22px;
-  height: 21px;
-  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+.restaurants .card .card-content .card-heart {
+  z-index: 1;
+  fill: linear-gradient(to bottom, #FF79DA, #9356DC);
 }
 
 /*********************** footer****************************/
@@ -314,4 +327,23 @@ footer a, footer p {
   font-weight: 400;
   color: white;
   margin: 0;
+}
+
+/********************** Desktop ******************/
+@media (min-width: 1024px) {
+  /***************headline***************/
+  .headlines h2 {
+    font-size: 40px;
+  }
+  .headlines button {
+    max-width: 22%;
+  }
+  /******************fonctionnement*************/
+  .fonctionnement {
+    width: 75%;
+    margin: auto;
+  }
+  .fonctionnement .card {
+    display: column;
+  }
 }/*# sourceMappingURL=style.css.map */
