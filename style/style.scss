@@ -4,6 +4,69 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
+.overlay {
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; 
+
+        
+    .loader {
+        display: flex;
+        align-items: center;
+        gap:10px;
+
+        #point-1, #point-2, #point-3 {
+            
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            top: 50%;
+            right: 50%;
+            background: linear-gradient(to top, #FF79DA, #9356DC);
+            
+        }
+
+        #point-1 {
+            animation: jump  900ms ease-in-out 300ms 4;
+        }
+        #point-2 {
+            animation: jump 900ms ease-in-out 600ms 4;
+        }
+        #point-3 {
+            animation: jump 900ms ease-in-out 900ms 4;
+        }  
+    }
+}
+
+.fade-out-loader {
+
+    animation: fadeOutLoader 1s 3600ms forwards;
+   
+}
+
+@keyframes fadeOutLoader {
+    0% { opacity: 1; }
+    90% { opacity: 0; }
+    100% {height: 0; width: 0; top: -20px;}
+}
+
+@keyframes jump {
+    0% { transform: translateY(0%); }
+    25% { transform: translateY(-50%); }
+    50% { transform: translateY(0%); }
+    100% { transform: translateY(0%); }
+}
+
 h1 {
     font-family: 'shrikhand', sans-serif;
 }

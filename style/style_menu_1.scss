@@ -97,18 +97,16 @@ main {
     .title {
         width: 90%;
         margin: auto;
-        margin-left: 30px;
+        
         margin-top: 20px;
         display: flex;
         flex-direction: row;
-        gap: 10px;
-        align-items: center;
         position: relative;
-
+        align-items: center;
+        gap: 20px;
+        
         .heart-container {
-
-            position: absolute;
-            bottom: 10px;
+            bottom: 30px;
             right: 20px
         }
 
@@ -142,7 +140,8 @@ main {
         h1 {
             font-weight: 400;
             font-size: 28px;
-            margin: 0;
+            margin-top: 10;
+            text-align: center;
     
         }
 
