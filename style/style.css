@@ -1,8 +1,24 @@
 /********** General ***********/
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-family: "shrikhand", sans-serif;
 }
 
+.fade-in-image {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 h2, h3, p, a {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
@@ -12,6 +28,8 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  max-width: 1920px;
+  margin: auto;
 }
 
 .main {
@@ -34,6 +52,7 @@ header {
   align-items: center;
   justify-content: center;
   margin-top: 0;
+  max-width: 1920px;
 }
 header h1 {
   width: 100%;
@@ -87,10 +106,11 @@ header .location {
   margin-bottom: 30px;
   width: 85%;
 }
-.headlines button {
+.headlines .button {
   width: 60%;
   height: 50px;
   font-weight: 500;
+  padding-top: 15px;
   color: white;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
   font-size: 16px;
@@ -98,11 +118,11 @@ header .location {
   border: solid 0px;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
   margin-bottom: 50px;
-  transition: all 400ms;
+  transition: opacity box-shadow 200ms;
 }
-.headlines button:hover {
+.headlines .button:hover {
   opacity: 0.8;
-  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 /********************fonctionnement*******************/
@@ -193,53 +213,67 @@ header .location {
   padding-bottom: 70px;
 }
 .restaurants h2 {
-  margin-top: 40px;
+  margin-top: 50px;
   padding-bottom: 20px;
   margin-left: 5%;
 }
-.restaurants a {
-  display: flex;
-  justify-content: center;
-}
 .restaurants .cards {
+  width: 100%;
   margin-top: -40px;
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.restaurants .card {
+.restaurants .cards .heart-container {
+  position: absolute;
+  bottom: 32px;
+  right: 20px;
+}
+.restaurants .cards .empty-heart {
+  display: block;
+}
+.restaurants .cards .full-heart {
+  display: none;
+}
+.restaurants .cards .heart-container:hover .empty-heart {
+  display: none;
+}
+.restaurants .cards .heart-container:hover .full-heart {
+  display: block;
+}
+.restaurants .cards .heart-gradient {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 2s ease;
+}
+.restaurants .cards .heart-gradient:hover {
+  opacity: 1;
+}
+.restaurants .cards .card {
   position: relative;
   display: flex;
   justify-content: center;
   width: 90%;
   align-items: center;
   flex-direction: column;
-  justify-self: center;
 }
-.restaurants .card .image {
+.restaurants .cards .card a {
+  width: 100%;
+}
+.restaurants .cards .card a .image {
+  position: relative;
   width: 100%;
   height: 100%;
-  max-height: 160px;
+  max-height: 180px;
+  overflow: hidden;
 }
-.restaurants .card img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  -o-object-position: 50% 80%;
-     object-position: 50% 80%;
-}
-.restaurants .card .img-vert {
-  -o-object-position: 50% 60%;
-     object-position: 50% 60%;
-}
-.restaurants .card .nouveau {
-  position: absolute;
-  right: 10px;
-  top: 10px;
+.restaurants .cards .card a .image .nouveau-1 {
   display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   justify-content: center;
   align-items: center;
   background-color: #99e2d0;
@@ -250,12 +284,26 @@ header .location {
   border-radius: 3px;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
 }
-.restaurants .card .nouveau p {
+.restaurants .cards .card a .image .nouveau-1 p {
   color: #008766;
   font-size: 14px;
   font-weight: 500;
 }
-.restaurants .card .card-content {
+.restaurants .cards .card a .image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 170px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  -o-object-position: center;
+     object-position: center;
+}
+.restaurants .cards .card a .image .img-vert {
+  -o-object-position: 50% 60%;
+     object-position: 50% 60%;
+}
+.restaurants .cards .card .card-content {
   width: 100%;
   display: flex;
   align-items: center;
@@ -266,7 +314,7 @@ header .location {
   padding-left: 10px;
   padding-right: 15px;
 }
-.restaurants .card .card-content .card-txt {
+.restaurants .cards .card .card-content .card-txt {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -274,24 +322,20 @@ header .location {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-.restaurants .card .card-content .card-txt .card-title {
+.restaurants .cards .card .card-content .card-txt .card-title {
   margin: 0;
   font-size: 18px;
 }
-.restaurants .card .card-content .card-txt .card-subtitle {
+.restaurants .cards .card .card-content .card-txt .card-subtitle {
   margin: 0;
   font-size: 17px;
   font-weight: 300;
-}
-.restaurants .card .card-content .card-heart {
-  z-index: 1;
-  fill: linear-gradient(to bottom, #FF79DA, #9356DC);
 }
 
 /*********************** footer****************************/
 footer {
   width: 100%;
-  padding-bottom: 5%;
+  padding-bottom: 20px;
   padding-left: 5%;
   padding-right: 5%;
   display: flex;
@@ -335,15 +379,43 @@ footer a, footer p {
   .headlines h2 {
     font-size: 40px;
   }
-  .headlines button {
+  .headlines .button {
     max-width: 22%;
   }
   /******************fonctionnement*************/
   .fonctionnement {
     width: 75%;
     margin: auto;
+    padding-top: 10px;
+    padding-bottom: 50px;
   }
-  .fonctionnement .card {
-    display: column;
+  .fonctionnement h2 {
+    padding-left: 10px;
+  }
+  .fonctionnement .cards {
+    flex-direction: row;
+    gap: 0px;
+  }
+  /******************** restaurants ****************/
+  .restaurants h2 {
+    width: 75%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+  .restaurants .cards {
+    width: 75%;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 100px;
+  }
+  .restaurants .cards .card {
+    width: 45%;
+    margin-top: -60px;
+  }
+  .restaurants .cards .card .image .img {
+    -o-object-position: 50% 80%;
+       object-position: 50% 80%;
   }
 }/*# sourceMappingURL=style.css.map */
