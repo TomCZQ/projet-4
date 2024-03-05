@@ -70,14 +70,18 @@ a {
 
     
 }
+    
 
 
 header{
-
     img{
+        object-fit: cover;
         width: 100%;
+        height: 280px;
     }
 }
+
+    
 
 /******************** menus *********************/
 main {
@@ -93,15 +97,52 @@ main {
     .title {
         width: 90%;
         margin: auto;
+        margin-left: 30px;
         margin-top: 20px;
         display: flex;
         flex-direction: row;
+        gap: 10px;
         align-items: center;
-        justify-content: space-between;
+        position: relative;
+
+        .heart-container {
+
+            position: absolute;
+            bottom: 10px;
+            right: 20px
+        }
+
+        .empty-heart {
+            display: block;
+          }
+          
+          .full-heart {
+            display: none;
+          }
+          
+          .heart-container:hover .empty-heart {
+            display: none;
+          }
+          
+          .heart-container:hover .full-heart {
+            display: block;
+          }
+          
+          .heart-gradient {
+            opacity: 0;
+            display: inline-block;
+            -webkit-transition: opacity 2s ease;
+            transition: opacity 2s ease;
+          }
+          
+          .heart-gradient:hover {
+            opacity: 1;
+          }
 
         h1 {
             font-weight: 400;
             font-size: 28px;
+            margin: 0;
     
         }
 
@@ -210,7 +251,7 @@ main {
         }
 
         .partie-1 {
-            animation: sideSlide 1s ease-in-out 0.5s forwards;
+            animation: sideSlide 1s ease-out 0.5s forwards;
             opacity: 0;
           }
           
@@ -228,8 +269,8 @@ main {
           @keyframes sideSlide {
             0% {
               opacity: 0;
-              margin-left: -1000px;
-              margin-right: -1000px;
+              margin-left: -500px;
+              margin-right: -500px;
             }
             50% {
               opacity: 0.5;
