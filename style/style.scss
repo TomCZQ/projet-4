@@ -7,64 +7,89 @@ html {
 
 
 .overlay {
-    
+
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999; 
+    z-index: 999;
 
-        
+
     .loader {
         display: flex;
         align-items: center;
-        gap:10px;
+        gap: 10px;
 
-        #point-1, #point-2, #point-3 {
-            
+        #point-1,
+        #point-2,
+        #point-3 {
+
             height: 30px;
             width: 30px;
             border-radius: 50%;
             top: 50%;
             right: 50%;
             background: linear-gradient(to top, #FF79DA, #9356DC);
-            
+
         }
 
         #point-1 {
-            animation: jump  900ms ease-in-out 300ms 4;
+            animation: jump 900ms ease-in-out 300ms 4;
         }
+
         #point-2 {
             animation: jump 900ms ease-in-out 600ms 4;
         }
+
         #point-3 {
             animation: jump 900ms ease-in-out 900ms 4;
-        }  
+        }
     }
 }
 
 .fade-out-loader {
 
     animation: fadeOutLoader 1s 3600ms forwards;
-   
+
 }
 
 @keyframes fadeOutLoader {
-    0% { opacity: 1; }
-    90% { opacity: 0; }
-    100% {height: 0; width: 0; top: -20px;}
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        height: 0;
+        width: 0;
+        top: -20px;
+    }
 }
 
 @keyframes jump {
-    0% { transform: translateY(0%); }
-    25% { transform: translateY(-50%); }
-    50% { transform: translateY(0%); }
-    100% { transform: translateY(0%); }
+    0% {
+        transform: translateY(0%);
+    }
+
+    25% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
 }
 
 h1 {
@@ -73,17 +98,25 @@ h1 {
 
 .fade-in-image {
 
-     animation: fadeIn 1s;
-    
+    animation: fadeIn 1s;
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
     }
 
-    @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-      }
+    100% {
+        opacity: 1;
+    }
+}
 
 
-h2, h3, p, a {
+h2,
+h3,
+p,
+a {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
@@ -98,7 +131,7 @@ body {
 }
 
 .main {
-    margin-top:0px;
+    margin-top: 0px;
 }
 
 a {
@@ -136,6 +169,7 @@ header {
         padding-top: 14px;
         padding-bottom: 13px;
     }
+
     .location {
         display: flex;
         flex-direction: row;
@@ -153,7 +187,7 @@ header {
 
 /****************headlines************/
 
-.headlines{
+.headlines {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -162,7 +196,7 @@ header {
     text-align: center;
     background-color: #f6f6f6;
 
-    h2 { 
+    h2 {
         margin-top: 0;
         margin-bottom: 0;
         padding-top: 5%;
@@ -171,7 +205,7 @@ header {
         width: 60%;
     }
 
-    p{
+    p {
         font-weight: 300;
         font-size: 18px;
         margin-bottom: 30px;
@@ -191,13 +225,13 @@ header {
         box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, .15);
         margin-bottom: 50px;
         transition: opacity box-shadow 200ms;
-    
-        &:hover {   
+
+        &:hover {
             opacity: 0.80;
             box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, .20);
         }
     }
-    
+
 }
 
 /********************fonctionnement*******************/
@@ -209,9 +243,9 @@ header {
     display: flex;
     flex-direction: column;
     text-align: left;
-    gap:20px;
+    gap: 20px;
 
-    h2{
+    h2 {
         margin-top: 40px;
         margin-bottom: 0px;
     }
@@ -221,13 +255,14 @@ header {
         flex-direction: column;
         gap: 20px;
         width: 100%;
-        
-    
+
+
 
         p {
             font-weight: 500;
             font-size: 16px;
         }
+
         .card {
             display: flex;
             flex-direction: row;
@@ -236,9 +271,9 @@ header {
             margin-right: 10px;
             padding-right: 10px;
             width: 100%;
-             
+
             z-index: 0;
-            
+
         }
 
         .card-text {
@@ -246,7 +281,7 @@ header {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap:20px;
+            gap: 20px;
             box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, .10);
             border-radius: 10px;
             width: 95%;
@@ -262,20 +297,20 @@ header {
             justify-content: center;
             width: 24px;
             height: 24px;
-            background-color: #9356dc; 
-            border-radius: 50%; 
+            background-color: #9356dc;
+            border-radius: 50%;
             border: solid 0px #D9D9D9;
             text-align: center;
             line-height: 40px;
             padding-left: -20px;
-        
 
-            p{
+
+            p {
                 color: white;
                 font-size: 14.18px;
             }
 
-            
+
         }
 
     }
@@ -300,11 +335,11 @@ header {
 /********************** restaurants ***************************/
 
 .restaurants {
-    
+
     display: flex;
     flex-direction: column;
     text-align: left;
-    gap:20px;
+    gap: 20px;
     background-color: #f6f6f6;
     padding-bottom: 70px;
 
@@ -315,7 +350,7 @@ header {
         margin-left: 5%;
     }
 
-    
+
 
     .cards {
         width: 100%;
@@ -335,42 +370,42 @@ header {
 
         .empty-heart {
             display: block;
-          }
-          
-          .full-heart {
+        }
+
+        .full-heart {
             display: none;
-          }
-          
-          .heart-container:hover .empty-heart {
+        }
+
+        .heart-container:hover .empty-heart {
             display: none;
-          }
-          
-          .heart-container:hover .full-heart {
+        }
+
+        .heart-container:hover .full-heart {
             display: block;
-          }
-          
-          .heart-gradient {
+        }
+
+        .heart-gradient {
             opacity: 0;
             display: inline-block;
             -webkit-transition: opacity 2s ease;
             transition: opacity 2s ease;
-          }
-          
-          .heart-gradient:hover {
+        }
+
+        .heart-gradient:hover {
             opacity: 1;
-          }
-    
+        }
+
 
         .card {
             position: relative;
             display: flex;
-            justify-content: center;           
+            justify-content: center;
             width: 90%;
             align-items: center;
             flex-direction: column;
-            
 
-            a {   
+
+            a {
 
                 width: 100%;
 
@@ -378,14 +413,14 @@ header {
                     position: relative;
                     width: 100%;
                     height: 100%;
-                    max-height:180px; 
+                    max-height: 180px;
                     overflow: hidden;
 
                     .nouveau-1 {
 
                         display: flex;
                         position: absolute;
-                        top :10px;
+                        top: 10px;
                         right: 10px;
                         justify-content: center;
                         align-items: center;
@@ -396,36 +431,36 @@ header {
                         border: none;
                         border-radius: 3px;
                         box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, .15);
-            
+
                         p {
                             color: #008766;
                             font-size: 14px;
                             font-weight: 500;
                         }
                     }
-        
+
                     img {
                         object-fit: cover;
                         width: 100%;
-                        height: 170px;           
+                        height: 170px;
                         border-top-right-radius: 10px;
                         border-top-left-radius: 10px;
-                        object-position: center ;         
-                        
+                        object-position: center;
+
                     }
-            
+
                     .img-vert {
                         object-position: 50% 60%;
                     }
-        
+
                 }
             }
-        
-        
-        
+
+
+
 
             .card-content {
-                width:100%;
+                width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -444,10 +479,10 @@ header {
                     padding-top: 15px;
                     padding-bottom: 15px;
 
-                    .card-title{
+                    .card-title {
                         margin: 0;
                         font-size: 18px;
-                        
+
                     }
 
                     .card-subtitle {
@@ -456,15 +491,15 @@ header {
                         font-weight: 300;
                     }
 
-            
+
                 }
 
-            
+
             }
         }
     }
 
-    
+
 }
 
 
@@ -472,12 +507,12 @@ header {
 
 footer {
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 5%;
     padding-left: 5%;
     padding-right: 5%;
     display: flex;
     flex-direction: column;
-    gap:5px;
+    gap: 5px;
     background: #353535;
 
     h1 {
@@ -499,9 +534,9 @@ footer {
         flex-direction: row;
         align-items: center;
         gap: 10px;
-        
+
         i {
-            width :13px;
+            width: 13px;
         }
 
         p {
@@ -509,7 +544,8 @@ footer {
         }
     }
 
-    a, p {
+    a,
+    p {
         font-size: 16px;
         font-weight: 400;
         color: white;
@@ -519,14 +555,13 @@ footer {
 }
 
 
-
 /********************** Desktop ******************/
 
 @media (min-width: 1024px) {
 
     /***************headline***************/
 
-    .headlines{
+    .headlines {
 
         h2 {
             font-size: 40px;
@@ -556,7 +591,7 @@ footer {
             flex-direction: row;
             gap: 0px;
 
-            
+
         }
     }
 
@@ -577,7 +612,7 @@ footer {
             flex-direction: row;
             flex-wrap: wrap;
             gap: 100px;
-            
+
             .card {
                 width: 45%;
                 margin-top: -60px;
@@ -591,6 +626,24 @@ footer {
         }
     }
 
+    footer {
+
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 100px;
+        height: 114px;
+        padding-top: 110px;
+
+        .liens-footer {
+            flex-direction: row;
+            align-items: center;
+
+            .space-footer {
+                margin-right: 40px;
+            }
+
+        }
+    }
+
 
 }
-

@@ -20,7 +20,9 @@ html {
   align-items: center;
   gap: 10px;
 }
-.overlay .loader #point-1, .overlay .loader #point-2, .overlay .loader #point-3 {
+.overlay .loader #point-1,
+.overlay .loader #point-2,
+.overlay .loader #point-3 {
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -85,7 +87,10 @@ h1 {
     opacity: 1;
   }
 }
-h2, h3, p, a {
+h2,
+h3,
+p,
+a {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
@@ -401,7 +406,7 @@ header .location {
 /*********************** footer****************************/
 footer {
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 5%;
   padding-left: 5%;
   padding-right: 5%;
   display: flex;
@@ -432,7 +437,8 @@ footer .liens-icones i {
 footer .liens-icones p {
   font-weight: 500;
 }
-footer a, footer p {
+footer a,
+footer p {
   font-size: 16px;
   font-weight: 400;
   color: white;
@@ -483,5 +489,19 @@ footer a, footer p {
   .restaurants .cards .card .image .img {
     -o-object-position: 50% 80%;
        object-position: 50% 80%;
+  }
+  footer {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 100px;
+    height: 114px;
+    padding-top: 110px;
+  }
+  footer .liens-footer {
+    flex-direction: row;
+    align-items: center;
+  }
+  footer .liens-footer .space-footer {
+    margin-right: 40px;
   }
 }/*# sourceMappingURL=style.css.map */
