@@ -369,6 +369,7 @@ header .location {
   border-top-left-radius: 10px;
   -o-object-position: center;
      object-position: center;
+  margin-bottom: -5px;
 }
 .restaurants .cards .card a .image .img-vert {
   -o-object-position: 50% 60%;
