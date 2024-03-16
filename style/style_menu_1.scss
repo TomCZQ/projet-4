@@ -5,7 +5,10 @@ h1 {
 }
 
 
-h2, h3, p, a {
+h2,
+h3,
+p,
+a {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
@@ -20,7 +23,7 @@ body {
 }
 
 .main {
-    margin-top:0px;
+    margin-top: 0px;
 }
 
 a {
@@ -35,13 +38,18 @@ a {
 .fade-in-image {
 
     animation: fadeIn 1s;
-   
-   }
 
-   @keyframes fadeIn {
-       0% { opacity: 0; }
-       100% { opacity: 1; }
-     }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 
 /*****************header*******************/
@@ -68,20 +76,20 @@ a {
         left: 25px;
     }
 
-    
+
 }
-    
 
 
-header{
-    img{
+
+header {
+    img {
         object-fit: cover;
         width: 100%;
         height: 280px;
     }
 }
 
-    
+
 
 /******************** menus *********************/
 main {
@@ -97,14 +105,14 @@ main {
     .title {
         width: 90%;
         margin: auto;
-        
+
         margin-top: 20px;
         display: flex;
         flex-direction: row;
         position: relative;
         align-items: center;
         gap: 20px;
-        
+
         .heart-container {
             bottom: 30px;
             right: 20px
@@ -112,47 +120,47 @@ main {
 
         .empty-heart {
             display: block;
-          }
-          
-          .full-heart {
+        }
+
+        .full-heart {
             display: none;
-          }
-          
-          .heart-container:hover .empty-heart {
+        }
+
+        .heart-container:hover .empty-heart {
             display: none;
-          }
-          
-          .heart-container:hover .full-heart {
+        }
+
+        .heart-container:hover .full-heart {
             display: block;
-          }
-          
-          .heart-gradient {
+        }
+
+        .heart-gradient {
             opacity: 0;
             display: inline-block;
             -webkit-transition: opacity 2s ease;
             transition: opacity 2s ease;
-          }
-          
-          .heart-gradient:hover {
+        }
+
+        .heart-gradient:hover {
             opacity: 1;
-          }
+        }
 
         h1 {
             font-weight: 400;
             font-size: 28px;
             margin-top: 10;
             text-align: center;
-    
+
         }
 
-        i{
+        i {
             font-weight: 100px;
             font-size: 30px;
             color: black;
         }
     }
-    
-    h2{
+
+    h2 {
         margin-top: 40px;
         margin-bottom: 0px;
     }
@@ -196,7 +204,7 @@ main {
                 font-weight: 300;
             }
         }
-        
+
         .prix {
             position: absolute;
             right: 10px;
@@ -215,79 +223,86 @@ main {
             right: -59px;
             background-color: #99e2d0;
             border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;            
+            border-bottom-right-radius: 15px;
 
         }
 
-        &:hover .animation-checkmark {    
-            animation: slideIn 200ms ease-in-out forwards; 
-        }
-        
-        &:hover .prix {    
-            animation: slideInPrix 200ms ease-in-out forwards; 
+        &:hover .animation-checkmark {
+            animation: slideIn 200ms ease-in-out forwards;
         }
 
-        &:active .animation-checkmark {    
-            animation: slideIn 200ms ease-in-out forwards; 
-        }    
-    }      
-
-        @keyframes slideIn {
-            from {
-                right: -59;
-            }
-            to {
-                right: 0px;
-            }
-        }
-        @keyframes slideInPrix {
-            from {
-                right: 0;
-            }
-            to {
-                right: 59px;
-            }
+        &:hover .prix {
+            animation: slideInPrix 200ms ease-in-out forwards;
         }
 
-        .partie-1 {
-            animation: sideSlide 1s ease-out 0.5s forwards;
+        &:active .animation-checkmark {
+            animation: slideIn 200ms ease-in-out forwards;
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            right: -59;
+        }
+
+        to {
+            right: 0px;
+        }
+    }
+
+    @keyframes slideInPrix {
+        from {
+            right: 0;
+        }
+
+        to {
+            right: 59px;
+        }
+    }
+
+    .partie-1 {
+        animation: sideSlide 1s ease-out 0.5s forwards;
+        opacity: 0;
+    }
+
+    .partie-2 {
+        animation: sideSlide 1s ease-out 1s forwards;
+        opacity: 0;
+    }
+
+    .partie-3 {
+        animation: sideSlide 1s ease-out 1.5s forwards;
+        opacity: 0;
+    }
+
+
+    @keyframes sideSlide {
+        0% {
             opacity: 0;
-          }
-          
-          .partie-2 {
-            animation: sideSlide 1s ease-out 1s forwards;
-            opacity: 0;
-          }
-          
-          .partie-3 {
-            animation: sideSlide 1s ease-out 1.5s forwards;
-            opacity: 0;
-          }
-          
-          
-          @keyframes sideSlide {
-            0% {
-              opacity: 0;
-              margin-left: -500px;
-              margin-right: -500px;
-            }
-            50% {
-              opacity: 0.5;
-            }
-            100% {
-              opacity: 1;
-              margin-left: 0;
-              margin-right: 0;
-            }
-          }
+            margin-left: -500px;
+            margin-right: -500px;
+        }
 
-    
+        50% {
+            opacity: 0.5;
+        }
 
-    .partie-1, .partie-2, .partie-3 {
+        100% {
+            opacity: 1;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+
+
+    .partie-1,
+    .partie-2,
+    .partie-3 {
         display: flex;
         flex-direction: column;
-        
-        
+
+
 
 
 
@@ -300,7 +315,7 @@ main {
             margin-bottom: 20px;
 
             .barre-deco {
-            
+
                 width: 40px;
                 height: 3px;
                 background-color: #99e2d0;
@@ -309,11 +324,11 @@ main {
             h2 {
                 font-size: 16px;
                 font-weight: 300;
-                
+
             }
 
         }
-            
+
     }
 
     .prix {
@@ -340,11 +355,11 @@ button {
     margin-bottom: 50px;
     margin-top: 50px;
     transition: all 400ms;
-    
-        &:hover {
-            opacity: 0.85;
-            box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, .15);
-        }
+
+    &:hover {
+        opacity: 0.85;
+        box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, .15);
+    }
 }
 
 /*********************** footer****************************/
@@ -356,7 +371,7 @@ footer {
     padding-right: 5%;
     display: flex;
     flex-direction: column;
-    gap:5px;
+    gap: 5px;
     background: #353535;
 
     h1 {
@@ -378,9 +393,9 @@ footer {
         flex-direction: row;
         align-items: center;
         gap: 10px;
-        
+
         i {
-            width :13px;
+            width: 13px;
         }
 
         p {
@@ -388,7 +403,8 @@ footer {
         }
     }
 
-    a, p {
+    a,
+    p {
         font-size: 16px;
         font-weight: 400;
         color: white;
@@ -413,7 +429,7 @@ footer {
 
         }
     }
-  
+
     /***************body***************/
 
     main {
@@ -443,7 +459,7 @@ footer {
 
         flex-direction: row-reverse;
         align-items: center;
-        gap: 100px; 
+        gap: 100px;
         height: 114px;
         padding-top: 110px;
 
