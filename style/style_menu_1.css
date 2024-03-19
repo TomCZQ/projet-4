@@ -96,37 +96,47 @@ main .title {
   gap: 20px;
 }
 main .title .heart-container {
-  bottom: 30px;
+  position: absolute;
+  align-items: center;
+  bottom: 32px;
   right: 20px;
 }
-main .title .empty-heart {
-  display: block;
+main .title .heart-container .fa-heart {
+  position: absolute;
+  bottom: -4px;
+  right: 10px;
 }
-main .title .full-heart {
-  display: none;
-}
-main .title .heart-container:hover .empty-heart {
-  display: none;
-}
-main .title .heart-container:hover .full-heart {
-  display: block;
-}
-main .title .heart-gradient {
-  opacity: 0;
-  display: inline-block;
-  transition: opacity 2s ease;
-}
-main .title .heart-gradient:hover {
+main .title .heart-container .coeur-1 {
+  background-color: #f6f6f6;
+  font-size: 2em;
   opacity: 1;
+  transition: opacity 200ms;
+  z-index: 2;
+}
+main .title .heart-container .coeur-3 {
+  font-size: 2em;
+  z-index: 1;
+}
+main .title .heart-container .coeur-2 {
+  font-size: 1.92em;
+  font-weight: 700;
+  background: linear-gradient(to bottom, #9356dc, #ff79da);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9356dc", endColorstr="#ff79da", GradientType=1);
+  -webkit-background-clip: text;
+  color: transparent;
+  z-index: 0;
+}
+main .title .heart-container .coeur-1:hover {
+  opacity: 0;
 }
 main .title h1 {
   font-weight: 400;
   font-size: 28px;
-  margin-top: 10;
+  margin-top: 10px;
   text-align: center;
 }
 main .title i {
-  font-weight: 100px;
+  font-weight: 100;
   font-size: 30px;
   color: black;
 }
@@ -175,6 +185,7 @@ main .card .prix {
   right: 10px;
   font-weight: 700;
   font-size: 15px;
+  transition: transform 200ms ease-in-out;
 }
 main .card .animation-checkmark {
   display: flex;
@@ -187,31 +198,17 @@ main .card .animation-checkmark {
   background-color: #99e2d0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  transition: transform 200ms ease-in-out;
+}
+main .card .animation-checkmark i {
+  color: white;
+  font-size: 1.5em;
 }
 main .card:hover .animation-checkmark {
-  animation: slideIn 200ms ease-in-out forwards;
+  transform: translate(-59px, 0px);
 }
 main .card:hover .prix {
-  animation: slideInPrix 200ms ease-in-out forwards;
-}
-main .card:active .animation-checkmark {
-  animation: slideIn 200ms ease-in-out forwards;
-}
-@keyframes slideIn {
-  from {
-    right: -59;
-  }
-  to {
-    right: 0px;
-  }
-}
-@keyframes slideInPrix {
-  from {
-    right: 0;
-  }
-  to {
-    right: 59px;
-  }
+  transform: translate(-59px, 0px);
 }
 main .partie-1 {
   animation: sideSlide 1s ease-out 0.5s forwards;
@@ -354,6 +351,12 @@ footer p {
   main .title {
     justify-content: center;
     gap: 20px;
+    width: 52%;
+  }
+  main .title .heart-container {
+    position: relative;
+    top: 10px;
+    left: 50px;
   }
   main .partie {
     width: 60%;

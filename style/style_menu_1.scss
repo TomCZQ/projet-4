@@ -114,47 +114,61 @@ main {
         gap: 20px;
 
         .heart-container {
-            bottom: 30px;
-            right: 20px
-        }
 
-        .empty-heart {
-            display: block;
-        }
+            position: absolute;
+            align-items: center;
+            bottom: 32px;
+            right: 20px;
 
-        .full-heart {
-            display: none;
-        }
 
-        .heart-container:hover .empty-heart {
-            display: none;
-        }
+            .fa-heart {
 
-        .heart-container:hover .full-heart {
-            display: block;
-        }
+                position: absolute;
+                bottom: -4px;
+                right: 10px;
+            }
 
-        .heart-gradient {
-            opacity: 0;
-            display: inline-block;
-            -webkit-transition: opacity 2s ease;
-            transition: opacity 2s ease;
-        }
+            .coeur-1 {
+                background-color: #f6f6f6;
+                font-size: 2em;
+                opacity: 1;
+                transition: opacity 200ms;
+                z-index: 2;
+            }
 
-        .heart-gradient:hover {
-            opacity: 1;
+            .coeur-3 {
+                font-size: 2em;
+
+                z-index: 1;
+            }
+
+            .coeur-2 {
+                font-size: 1.92em;
+                font-weight: 700;
+                background: linear-gradient(to bottom, #9356dc, #ff79da);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9356dc", endColorstr="#ff79da", GradientType=1);
+                -webkit-background-clip: text;
+                color: transparent;
+                z-index: 0;
+            }
+
+            .coeur-1:hover {
+                opacity: 0;
+            }
+
+
         }
 
         h1 {
             font-weight: 400;
             font-size: 28px;
-            margin-top: 10;
+            margin-top: 10px;
             text-align: center;
 
         }
 
         i {
-            font-weight: 100px;
+            font-weight: 100;
             font-size: 30px;
             color: black;
         }
@@ -210,6 +224,7 @@ main {
             right: 10px;
             font-weight: 700;
             font-size: 15px;
+            transition: transform 200ms ease-in-out;
         }
 
         .animation-checkmark {
@@ -224,41 +239,26 @@ main {
             background-color: #99e2d0;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
+            transition: transform 200ms ease-in-out;
+
+            i {
+                color: white;
+                font-size: 1.5em;
+            }
 
         }
 
         &:hover .animation-checkmark {
-            animation: slideIn 200ms ease-in-out forwards;
+            transform: translate(-59px, 0px);
         }
 
         &:hover .prix {
-            animation: slideInPrix 200ms ease-in-out forwards;
+            transform: translate(-59px, 0px);
         }
 
-        &:active .animation-checkmark {
-            animation: slideIn 200ms ease-in-out forwards;
-        }
+
     }
 
-    @keyframes slideIn {
-        from {
-            right: -59;
-        }
-
-        to {
-            right: 0px;
-        }
-    }
-
-    @keyframes slideInPrix {
-        from {
-            right: 0;
-        }
-
-        to {
-            right: 59px;
-        }
-    }
 
     .partie-1 {
         animation: sideSlide 1s ease-out 0.5s forwards;
@@ -440,6 +440,13 @@ footer {
         .title {
             justify-content: center;
             gap: 20px;
+            width: 52%;
+
+            .heart-container {
+                position: relative;
+                top: 10px;
+                left: 50px;
+            }
         }
 
         .partie {
