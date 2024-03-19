@@ -224,11 +224,10 @@ header {
         border: solid 0px;
         box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, .15);
         margin-bottom: 50px;
-        transition: opacity box-shadow 200ms;
+        transition: opacity 200ms;
 
         &:hover {
             opacity: 0.80;
-            box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, .20);
         }
     }
 
@@ -360,40 +359,55 @@ header {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        position: relative;
 
         .heart-container {
 
             position: absolute;
+            align-items: center;
             bottom: 32px;
-            right: 20px
+            right: 20px;
+
+
+            .fa-heart {
+
+                position: absolute;
+                bottom: -4px;
+                right: 10px;
+            }
+
+            .coeur-1 {
+                background-color: white;
+                font-size: 2em;
+                opacity: 1;
+                transition: opacity 200ms;
+                z-index: 2;
+            }
+
+            .coeur-3 {
+                font-size: 2em;
+
+                z-index: 1;
+            }
+
+            .coeur-2 {
+                font-size: 1.92em;
+                font-weight: 700;
+                background: linear-gradient(to bottom, #9356dc, #ff79da);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9356dc", endColorstr="#ff79da", GradientType=1);
+                -webkit-background-clip: text;
+                color: transparent;
+                z-index: 0;
+            }
+
+            .coeur-1:hover {
+                opacity: 0;
+            }
+
+
         }
 
-        .empty-heart {
-            display: block;
-        }
 
-        .full-heart {
-            display: none;
-        }
-
-        .heart-container:hover .empty-heart {
-            display: none;
-        }
-
-        .heart-container:hover .full-heart {
-            display: block;
-        }
-
-        .heart-gradient {
-            opacity: 0;
-            display: inline-block;
-            -webkit-transition: opacity 2s ease;
-            transition: opacity 2s ease;
-        }
-
-        .heart-gradient:hover {
-            opacity: 1;
-        }
 
 
         .card {
